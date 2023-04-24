@@ -70,16 +70,22 @@
 
 5. **Usar pruebas unitarias**
    Las pruebas unitarias son fundamentales para asegurarse de que el código funciona correctamente y se puede mantener a lo largo del tiempo. Escribir pruebas unitarias ayuda a identificar errores temprano y a mantener la calidad del código a largo plazo. Por ejemplo, si tienes una función que realiza una suma, escribe pruebas unitarias para verificar que la función retorna el resultado correcto:
+   
    ```
-   // Malo
-   function suma(a, b) {
-     return a + b;
-   }
+      // Malo
+      function suma(a, b) {
+        return a + b;
+      }
 
-   // Bueno
-   function suma(a, b) {
-     return a + b;
-   }
+      // Bueno
+      function suma(a, b) {
+        return a + b;
+      }
 
-   // Pruebas unitarias
-   describe("suma", () =>
+      // Pruebas unitarias
+      describe("suma", () => {
+        it("debe sumar dos números correctamente", () => {
+          expect(suma(1, 2)).toEqual(3);
+        });
+      });
+   ```
